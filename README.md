@@ -31,32 +31,38 @@ Sistema moderno para gestão e acompanhamento de licitações públicas
 - npm ou yarn
 
 ### Instalação
-\`\`\`bash
+
 # Clonar o repositório
+
+```
 git clone <url-do-repositorio>
+```
 
 # Instalar dependências
 npm install
 
 # Executar em desenvolvimento
+```
 npm run dev
-\`\`\`
-
+```
 ### Build para Produção
-\`\`\`bash
+
+```
 npm run build
-\`\`\`
+```
 
 ## 🧪 Testes
 
-\`\`\`bash
+
 # Testes unitários
+
+```
 npm run test
-
+```
 # Testes E2E
+```
 npm run test:e2e
-\`\`\`
-
+```
 ## 📋 Requisitos Atendidos
 
 ### ✅ Obrigatórios
