@@ -1,0 +1,28 @@
+<template>
+  <div id="app">
+    <LicitacoesManager />
+  </div>
+</template>
+
+<script setup>
+import LicitacoesManager from '@/components/LicitacoesManager.vue'
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+#app {
+  min-height: 100vh;
+}
+</style>

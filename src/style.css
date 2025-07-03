@@ -1,0 +1,32 @@
+/* Reset e estilos base já incluídos no App.vue */
+
+/* Utilitários */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .filters-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stats {
+    flex-direction: column !important;
+  }
+
+  .licitacao-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .licitacao-info {
+    grid-template-columns: 1fr !important;
+  }
+}
