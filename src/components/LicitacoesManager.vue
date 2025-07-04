@@ -28,7 +28,7 @@
     <div v-else>
       <!-- Debug visual -->
       <pre>licitacoes: {{ licitacoes }}</pre>
-      <pre>licitacoesFiltradas: {{ licitacoesFiltradas }}</pre>
+<pre>licitacoes.value: {{ licitacoes.value }}</pre>
 
       <transition-group 
         name="slide-fade" 
