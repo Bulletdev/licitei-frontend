@@ -18,12 +18,12 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
   const licitacoesFiltradas = computed(() => {
     let resultado = licitacoes.value
 
-    if (filtros.value.codigoUasg) {
-      resultado = resultado.filter(l => String(l.codigoUasg) === String(filtros.value.codigoUasg))
+    if (filtros.value.codigoUasg && String(filtros.value.codigoUasg).trim() !== "") {
+      resultado = resultado.filter(l => String(l.codigoUasg) === String(filtros.value.codigoUasg).trim())
     }
 
-    if (filtros.value.numeroPregao) {
-      resultado = resultado.filter(l => String(l.numeroPregao) === String(filtros.value.numeroPregao))
+    if (filtros.value.numeroPregao && String(filtros.value.numeroPregao).trim() !== "") {
+      resultado = resultado.filter(l => String(l.numeroPregao) === String(filtros.value.numeroPregao).trim())
     }
 
     if (filtros.value.statusLeitura === "lida" || filtros.value.statusLeitura === "nao-lida") {
