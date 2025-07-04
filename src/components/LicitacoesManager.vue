@@ -56,6 +56,8 @@
 </template>
 
 <script setup>
+import { useLicitacaoStore } from '@/stores/licitacao.store'
+const store = useLicitacaoStore()
 import { onMounted } from 'vue'
 import { useLicitacoes } from '@/composables/useLicitacoes'
 import FiltrosCard from './FiltrosCard.vue'
@@ -63,6 +65,7 @@ import EstatisticasCard from './EstatisticasCard.vue'
 import LicitacaoCard from './LicitacaoCard.vue'
 
 const {
+  licitacoes,
   licitacoesFiltradas,
   loading,
   error,
