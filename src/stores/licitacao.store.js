@@ -18,7 +18,7 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
   const licitacoesFiltradas = computed(() => {
     let resultado = licitacoes.value
 
-    if (filtros.value.statusLeitura) {
+    if (filtros.value.statusLeitura === "lida" || filtros.value.statusLeitura === "nao-lida") {
       resultado = resultado.filter((licitacao) => {
         const lida = leituraStatus.value.get(licitacao.id) || false
         if (filtros.value.statusLeitura === "lida") return lida
