@@ -3,7 +3,7 @@ import axios from "axios"
 class LicitacaoService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_API_BASE_URL || "https://licitei-backend-56315dca6f6b.herokuapp.com/api",
+      baseURL: import.meta.env.VITE_API_BASE_URL || "https://licitei-backend-56315dca6f6b.herokuapp.com/",
       timeout: 5000,
       headers: {
         "Content-Type": "application/json",
