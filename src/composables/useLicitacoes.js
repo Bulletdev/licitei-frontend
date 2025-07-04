@@ -1,6 +1,6 @@
 import { computed } from "vue"
-import { useLicitacaoStore } from "@stores/licitacao.store"
-import { formatarData, formatarValor } from "@utils/formatters"
+import { useLicitacaoStore } from '@/stores/licitacao.store'
+import { formatarData, formatarValor } from "@/utils/formatters"
 
 export function useLicitacoes() {
   const store = useLicitacaoStore()
