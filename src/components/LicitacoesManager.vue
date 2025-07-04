@@ -25,31 +25,31 @@
     <div v-if="loading" class="loading">
       Carregando licitações...
     </div>
+    <div v-else>
+      <!-- Debug visual -->
+      <pre>licitacoes: {{ licitacoes }}</pre>
+      <pre>licitacoesFiltradas: {{ licitacoesFiltradas }}</pre>
 
-    <!-- Debug visual -->
-    <pre>licitacoes: {{ licitacoes }}</pre>
-    <pre>licitacoesFiltradas: {{ licitacoesFiltradas }}</pre>
+      <transition-group 
+        name="slide-fade" 
+        tag="div" 
+        class="licitacoes-grid" 
+        v-if="licitacoesFiltradas.length > 0"
+      >
+        <LicitacaoCard
+          v-for="licitacao in licitacoesFiltradas"
+          :key="licitacao.id"
+          :licitacao="licitacao"
+          @toggle-leitura="toggleLeitura"
+        />
+      </transition-group>
 
-    <!-- Lista de Licitações -->
-    <transition-group 
-      name="slide-fade" 
-      tag="div" 
-      class="licitacoes-grid" 
-      v-else-if="licitacoesFiltradas.length > 0"
-    >
-      <LicitacaoCard
-        v-for="licitacao in licitacoesFiltradas"
-        :key="licitacao.id"
-        :licitacao="licitacao"
-        @toggle-leitura="toggleLeitura"
-      />
-    </transition-group>
-
-    <div v-else-if="!loading" class="empty-state">
-      <div class="empty-icon">📋</div>
-      <div class="empty-title">Nenhuma licitação encontrada</div>
-      <div class="empty-text">
-        {{ mensagemEstadoVazio }}
+      <div v-else class="empty-state">
+        <div class="empty-icon">📋</div>
+        <div class="empty-title">Nenhuma licitação encontrada</div>
+        <div class="empty-text">
+          {{ mensagemEstadoVazio }}
+        </div>
       </div>
     </div>
   </div>
