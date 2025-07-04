@@ -85,6 +85,7 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
           })
         : [];
       console.log("Licitações após processamento da API (final):", licitacoes.value); // Debug 2
+      console.log("DEBUG APÓS PREENCHER: licitacoes", licitacoes.value); // NOVO DEBUG
 
       if (licitacoes.value.length === 0) {
         console.log("Nenhum dado da API, usando dados mock."); // Debug 3
@@ -98,6 +99,7 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
           dataAbertura: licitacao.dataAbertura ? new Date(licitacao.dataAbertura).toISOString() : 'N/A',
         }))
         console.log("Licitações após processamento mock:", licitacoes.value); // Debug 4
+        console.log("DEBUG APÓS MOCK: licitacoes", licitacoes.value); // NOVO DEBUG
       }
     } catch (err) {
       console.error("Erro ao carregar licitações (catch block):", err); // Debug 5
@@ -111,9 +113,11 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
         valorEstimado: licitacao.valorEstimado || 0,
         dataAbertura: licitacao.dataAbertura ? new Date(licitacao.dataAbertura).toISOString() : 'N/A',
       }))
+      console.log("DEBUG APÓS MOCK (catch): licitacoes", licitacoes.value); // NOVO DEBUG
     } finally {
       loading.value = false
     }
+    console.log("DEBUG FINAL STORE: licitacoes", licitacoes.value)
   }
 
   function aplicarFiltros() {
