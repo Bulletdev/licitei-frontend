@@ -121,11 +121,11 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
   }
 
   function limparFiltros() {
-    filtros.value = {
+    Object.assign(filtros.value, {
       codigoUasg: "",
       numeroPregao: "",
       statusLeitura: "",
-    }
+    })
     carregarLicitacoes()
   }
 
