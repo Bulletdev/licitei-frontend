@@ -26,6 +26,10 @@
       Carregando licitações...
     </div>
 
+    <!-- Debug visual -->
+    <pre>licitacoes: {{ licitacoes }}</pre>
+    <pre>licitacoesFiltradas: {{ licitacoesFiltradas }}</pre>
+
     <!-- Lista de Licitações -->
     <transition-group 
       name="slide-fade" 
