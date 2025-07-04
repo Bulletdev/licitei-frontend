@@ -18,7 +18,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "http://localhost:9991",
+        target: "https://licitei-backend-56315dca6f6b.herokuapp.com",
         changeOrigin: true,
       },
     },
