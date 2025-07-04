@@ -46,9 +46,9 @@ export const useLicitacaoStore = defineStore("licitacao", () => {
   const licitacoesNaoLidas = computed(() => licitacoesFiltradas.value.filter((l) => !l.lida))
 
   const estatisticas = computed(() => ({
-    total: licitacoesFiltradas.value.length,
-    lidas: licitacoesLidas.value.length,
-    naoLidas: licitacoesNaoLidas.value.length,
+    total: licitacoes.value.length,
+    lidas: licitacoes.value.filter(l => leituraStatus.value.get(l.id)).length,
+    naoLidas: licitacoes.value.filter(l => !leituraStatus.value.get(l.id)).length,
   }))
 
   async function carregarLicitacoes() {
