@@ -34,10 +34,10 @@
         name="slide-fade" 
         tag="div" 
         class="licitacoes-grid" 
-        v-if="licitacoesFiltradas.length > 0"
+        v-if="licitacoes.length > 0"
       >
         <LicitacaoCard
-          v-for="licitacao in licitacoesFiltradas"
+          v-for="licitacao in licitacoes"
           :key="licitacao.id"
           :licitacao="licitacao"
           @toggle-leitura="toggleLeitura"
